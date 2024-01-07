@@ -1,11 +1,14 @@
 import React from 'react'
 import './Task.css';
 
-const Task = () => {
+const Task = ( { task, onDelete}) => {
   return (
     <div className='task'>
-      <h3>Task Name</h3>
-      <p>Day & Time</p>
+        <h3>
+          {task.text}
+          <button onClick={ () => onDelete(task.id)}>Delete</button>
+        </h3>
+        <p>{task.day}</p>
     </div>
   )
 }

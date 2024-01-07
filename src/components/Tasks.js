@@ -1,17 +1,11 @@
 import React from 'react'
 import Task from './Task'
 
-const Tasks = () => {
-    const tasks = [
-        {id: 1, text: 'Task 1', day: 'Monday', reminder: true},
-        {id: 2, text: 'Task 2', day: 'Tuesday', reminder: false}
-    ];
-
+const Tasks = ({ tasks, onDelete}) => {
   return (
     <>
-        {tasks.map((task) => (
-            <Task key = {task.id} task={task} />
-        ))}
+        {tasks.map(task => 
+            <Task key={task.id} task={task} onDelete={onDelete}/>)}
     </>
   );
 }
